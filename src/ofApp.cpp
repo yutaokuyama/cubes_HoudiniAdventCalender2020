@@ -14,8 +14,8 @@ void ofApp::setup(){
         
         positions.push_back(position);
         dstPositions.push_back(position);
-        scales.push_back(scale);
-        dstScales.push_back(scale);
+        sizes.push_back(scale);
+        dstSizes.push_back(scale);
     }
 }
 
@@ -37,7 +37,7 @@ void ofApp::dstPositionSetter(){
 
 void ofApp::dstScaleSetter(){
     int offset = 10;
-    for(auto& dstScale: dstScales){
+    for(auto& dstScale: dstSizes){
         int seed = ofRandom(10);
         switch(seed){
             case 0:
@@ -57,7 +57,7 @@ void ofApp::update(){
     dstScaleSetter();
     for(int i=0;i<NUM;i++){
         positions[i] +=(dstPositions[i]-positions[i])/3.0;
-        scales[i] +=(dstScales[i]-scales[i])/3.0;
+        sizes[i] +=(dstSizes[i]-sizes[i])/3.0;
     }
 }
 
@@ -70,7 +70,7 @@ void ofApp::draw(){
     for(int i = 0;i<NUM;i++){
         ofPushMatrix();
         ofTranslate(positions[i]);
-        ofDrawBox(positions[i],scales[i].x,scales[i].y,scales[i].z);
+        ofDrawBox(positions[i],sizes[i].x,sizes[i].y,sizes[i].z);
         ofPopMatrix();
     }
 

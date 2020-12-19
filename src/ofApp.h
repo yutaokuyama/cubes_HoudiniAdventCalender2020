@@ -13,8 +13,8 @@ public:
     static const int NUM = 500;
     std::vector<glm::vec3> positions; //座標
     std::vector<glm::vec3> dstPositions; //イージング用の移動先の座標
-    std::vector<glm::vec3> scales;//座標
-    std::vector<glm::vec3> dstScales;//イージング用の移動先の座標
+    std::vector<glm::vec3> sizes;//座標
+    std::vector<glm::vec3> dstSizes;//イージング用の移動先の座標
     
     ofEasyCam cam;
     ofLight light;
