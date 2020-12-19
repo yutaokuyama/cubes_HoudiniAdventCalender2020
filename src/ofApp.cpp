@@ -19,7 +19,7 @@ void ofApp::setup(){
     }
 }
 
-void ofApp::dstPositionSetter(){
+void ofApp::updateDstPositions(){
     int offset = 10;
     for(auto& dstPosition: dstPositions){
         int seed = ofRandom(10);
@@ -35,7 +35,7 @@ void ofApp::dstPositionSetter(){
     }
 }
 
-void ofApp::dstScaleSetter(){
+void ofApp::updateDstSizes(){
     int offset = 10;
     for(auto& dstScale: dstSizes){
         int seed = ofRandom(10);
@@ -53,8 +53,8 @@ void ofApp::dstScaleSetter(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    dstPositionSetter();
-    dstScaleSetter();
+    updateDstPositions();
+    updateDstSizes();
     for(int i=0;i<NUM;i++){
         positions[i] +=(dstPositions[i]-positions[i])/3.0;
         sizes[i] +=(dstSizes[i]-sizes[i])/3.0;

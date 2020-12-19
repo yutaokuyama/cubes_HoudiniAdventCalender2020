@@ -19,8 +19,8 @@ public:
     ofEasyCam cam;
     ofLight light;
     
-    void dstPositionSetter();
-    void dstScaleSetter();
+    void updateDstPositions();
+    void updateDstSizes();
     
     static const int scaleMax = 15;
     static const int scaleMin = 5;
